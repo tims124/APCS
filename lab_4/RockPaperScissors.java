@@ -56,7 +56,3 @@ public class RockPaperScissors{
       }
   }
 }
-Construct a class RockPaperScissors. The user input should be R, P, or S (not
-case sensitive). The computer will then play Rock, Paper, Scissors with the user by
-choosing R, P, or S at random, and then reporting that the computer wins, the user
-wins or that it was a draw.
