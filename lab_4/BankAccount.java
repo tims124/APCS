@@ -8,7 +8,7 @@ public class BankAccount{
 
 	//adds to the balance of the object
 	public double deposit(double dep){
-		if (dep > 0){
+		if (dep < 0){
 		this.balance = balance + dep;
 		return balance;
 	}else{
@@ -19,13 +19,17 @@ public class BankAccount{
 
 	//subtracts from the balance of the object
 	public double withdraw(double draw){
-		if (draw > 0){
-		this.balance = balance - draw;
-		return balance;
-	}else{
-		System.out.println("Can't withdraw a negative ammount of money.");
-		return balance;
-	}
+
+		if (draw > balance){
+		System.out.println("Can't withdraw more than the current balance");
+		}
+		if (draw < 0){
+			this.balance = balance - draw;
+			return balance;
+		}else{
+			System.out.println("Can't withdraw a negative ammount of money.");
+			return balance;
+		}
 	}
 
 	//adds the interest rate to the balance of the object
