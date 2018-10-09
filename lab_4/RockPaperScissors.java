@@ -1,34 +1,37 @@
 
 import java.util.Scanner;
 public class RockPaperScissors{
-  public RockPaperScissors(){
 
-    public void RPC(){
+
+    public void RPS(){
       Scanner input = new Scanner(System.in);
 
-      System.out.print("Do you want to play Rock paper scissors?(Y/N)")
+      System.out.print("Do you want to play Rock paper scissors?(Y/N)");
       String YN = input.nextLine();
       boolean check = false;
-      check = YN.equals("Y");
+      YN = YN.toLowerCase();
+      check = YN.equals("y");
 
+      while(true){
       if(check){
-      System.out.println("Rock(R), Paper(P), or Scissors(S)?")
+      System.out.println("Rock(R), Paper(P), or Scissors(S)?");
       String RPS = input.nextLine();
       int human = 3;
-      if(RPS.equals("R")){
+      RPS = RPS.toLowerCase();
+      if(RPS.equals("r")){
          human = 0;
       }
-      if(RPS.equals("P")){
+      if(RPS.equals("p")){
          human = 1;
       }
-      if(RPS.equals("S")){
-        human =2
+      if(RPS.equals("s")){
+        human =2;
       }
 
 
-      int comp = Math.random(0,3); //0 = r; 1 = p; 2 = s
+      double comp = Math.floor(Math.random()*3); //0 = r; 1 = p; 2 = s
 
-        System.out.println(Computer)
+        //System.out.println("Computer");
         String computer = "";
       if(comp == 0){
         computer = "R";
@@ -41,7 +44,6 @@ public class RockPaperScissors{
       }
 
       System.out.println("Player: "+RPS);
-      Thread.sleep(500);
       System.out.println("Computer: "+computer);
       if (comp == human){
         System.out.println("TIE!");
@@ -53,6 +55,7 @@ public class RockPaperScissors{
         System.out.println("PLAYER WINS!");
       }
 
+      }
       }
   }
 }
