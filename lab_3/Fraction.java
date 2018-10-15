@@ -31,14 +31,14 @@ public class Fraction{
 	}
 
 	public Fraction addFraction(Fraction a){
-		this.num = this.getNum * a.getDenom + this.getDenom * a.getNum;
-		this.denom =this.denom * a.denom;
+		this.num = this.getNum() * a.getDenom() + this.getDenom() * a.getNum();
+		this.denom =this.getDenom() * a.getDenom();
 		return new Fraction(this.num,this.denom);
 	}
 
 	public Fraction subtractFraction(Fraction a){
-		this.num = this.getNum * a.getDenom - this.getDenom * a.getNum;
-		this.denom =this.denom * a.denom;
+		this.num = this.getNum() * a.getDenom() - this.getDenom() * a.getNum();
+		this.denom =this.getDenom() * a.getDenom();
 		return new Fraction(this.num,this.denom);
 	}
 

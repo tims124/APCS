@@ -9,17 +9,16 @@ public class Quadratic{
 	}
 
 	public void findRoots(){
-		this.checkRoot = checkRoot + 1;
-		boolean findRoots = (a==1);
+		boolean findRoots = this.hasSolutions;
 		if(findRoots){
 			System.out.println("There are no real roots");
 		}else{
-			this.root1 = (-b+Math.sqrt(Math.pow(b,2)-4*a*c)) / (2*a); 
+			this.root1 = (-b+Math.sqrt(Math.pow(b,2)-4*a*c)) / (2*a);
 			this.root2 = (-b-Math.sqrt(Math.pow(b,2)-4*a*c)) / (2*a);
 	return;
 		}
 	}
-	
+
 	public Boolean hasSolutions(){
 	this.checkRoot = checkRoot + 1;
 	double d = Math.pow(b,2) - 4*a*c;
@@ -30,7 +29,7 @@ public class Quadratic{
 			return true;
 		}
 	}
-	
+
 	public void displayRoots(){
 		if (checkRoot != 2){
 			System.out.println("Please run findRoots() and hasSolutions() first");
@@ -42,9 +41,9 @@ public class Quadratic{
 			System.out.println("The roots are: " +root1+" and "+root2);
 		return;
 		}
-	}}		
-	
-	
+	}}
+
+
 
 	private double a;
 	private double b;
