@@ -13,13 +13,9 @@ public class CombinationTest{
 	boolean x = false;
 
 
-	while(check.equals("y")){
-	ls = false;
-
 	if(check.equals("y")){
 			test.setPosition();
 	}
-
 
 	System.out.print("Try to open the lock?");
 	check = input.nextLine();
@@ -51,7 +47,6 @@ public class CombinationTest{
 		}
 	}
 
-}
 
 	}
 }
