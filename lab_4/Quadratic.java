@@ -9,7 +9,7 @@ public class Quadratic{
 	}
 
 	public void findRoots(){
-		boolean findRoots = this.hasSolutions;
+		boolean findRoots = this.hasSolutions();
 		if(findRoots){
 			System.out.println("There are no real roots");
 		}else{

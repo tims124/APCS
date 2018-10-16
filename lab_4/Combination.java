@@ -13,6 +13,9 @@ The combination is a string of three uppercase letters. */
 /* Method to set the dial to a position, which is a string consisting
 of a single uppercase letter. */
   public void setPosition(){
+    String t1 = "";
+    String t2 = "";
+    String t3 = "";
     Scanner input = new Scanner(System.in);
     String check = "y";
     int counter = 0;
@@ -29,15 +32,18 @@ of a single uppercase letter. */
 
       if (P1.equals("")){
         System.out.print("Set next position: ");
-        this.P1 = input.nextLine();
+        t1 = input.nextLine();
+        this.P1 = t1.toLowerCase();
       }else{
         if(P2.equals("")){
           System.out.print("Set next position: ");
-          this.P2 = input.nextLine();
+          t2 = input.nextLine();
+          this.P2 = t2.toLowerCase();
         }else{
           if(P3.equals("")){
               System.out.print("Set next position: ");
-              this.P3 = input.nextLine();
+              t3 = input.nextLine();
+              this.P3 = t3.toLowerCase();
           }
         }
       }
@@ -54,18 +60,20 @@ of a single uppercase letter. */
 /* Method to try unlocking the lock*/
   public void unlock(){
       int lockcheck = 0;
-      if(P1.equals(L1)){
+      if(P1.equals(L1.toLowerCase())){
         lockcheck = lockcheck + 1;
       }
-      if(P2.equals(L2)){
+      if(P2.equals(L2.toLowerCase())){
         lockcheck = lockcheck + 1;
       }
-      if(P3.equals(L3)){
+      if(P3.equals(L3.toLowerCase())){
         lockcheck = lockcheck + 1;
       }
 
       if(lockcheck == 3){
         this.LockState = true;
+      }else{
+        this.LockState = false;
       }
   }
 
@@ -74,7 +82,7 @@ of a single uppercase letter. */
 lock is currently open.*/
 
   public boolean isOpen(){
-  if(LockState){
+  if(this.LockState){
     return true;
   }else{
     return false;
