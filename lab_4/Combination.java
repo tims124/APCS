@@ -49,7 +49,7 @@ of a single uppercase letter. */
       }
 
 
-        System.out.println("Set another position(Y/N): ");
+        System.out.print("Set another position(Y/N): ");
         check = input.nextLine();
         check = check.toLowerCase();
         counter = counter + 1;

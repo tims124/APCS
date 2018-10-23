@@ -9,15 +9,19 @@ public class CombinationTest{
 	System.out.print("Enter a combination into the lock?(Y/N) ");
 	String check = input.nextLine();
 	check = check.toLowerCase();
+	String again = "";
 	boolean ls = false;
 	boolean x = false;
+	boolean loop = true;
 
+
+	while(loop == true){
 
 	if(check.equals("y")){
 			test.setPosition();
 	}
 
-	System.out.print("Try to open the lock?");
+	System.out.print("Try to open the lock?(Y/N): ");
 	check = input.nextLine();
 	check = check.toLowerCase();
 
@@ -33,6 +37,18 @@ public class CombinationTest{
 		ls = false;
 	}
 	}
+	if(ls == false){
+			System.out.print("Try again?(Y/N): ");
+			again = input.nextLine();
+			again = again.toLowerCase();
+
+			if(again.equals("y")){
+				loop = true;
+				}else{
+					System.out.println("Have a good day!");
+					loop = false;
+			}
+	}
 
 	if(ls){
 		System.out.print("Lock the Lock?(Y/N) ");
@@ -46,7 +62,7 @@ public class CombinationTest{
 			System.out.println("Have a good day.");
 		}
 	}
-
+}
 
 	}
 }

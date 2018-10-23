@@ -38,10 +38,10 @@ public class TruthTables {
      System.out.println("F-F: "+d);
      System.out.println("");
 
-     a = ((pt || qt) && (pt && qt)) || ((pt || (qt == false)) && (pt && qt)); //p4
-     b = ((pt || qf) && (pt && qf)) || ((pt || (qf == false)) && (pt && qf));
-     c = ((pf || qt) && (pf && qt)) || ((pf || (qt == false)) && (pf && qt));
-     d = ((pf || qf) && (pf && qf)) || ((pf || (qf == false)) && (pf && qf));
+     a = ((pt || qt) && (pt && qt)) || (((pt || (qt == false)) && (pt && qt)) == false); //p4
+     b = ((pt || qf) && (pt && qf)) || (((pt || (qf == false)) && (pt && qf)) == false);
+     c = ((pf || qt) && (pf && qt)) || (((pf || (qt == false)) && (pf && qt)) == false);
+     d = ((pf || qf) && (pf && qf)) || (((pf || (qf == false)) && (pf && qf)) == false);
 
      System.out.println("T-T: "+a);
      System.out.println("T-F: "+b);
