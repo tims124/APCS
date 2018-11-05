@@ -2,7 +2,6 @@ import java.util.*;
 public class Stats{
   public Stats(){
     count = 0;
-
     C=0;
   }
 
@@ -26,10 +25,10 @@ public class Stats{
 
   public double getStandardDeviation(){ //gets standard deviation
     int counter = 0;
-    double avg = this.getAverage();    //could cut this maybe
+    a = this.getAverage();    //could cut this maybe
 
     while(counter < count){            //does summation of (x-avg)^2 of the standard deviaiton
-      double A = values.get(counter) - avg; //by pulling all of the numbers out of the list
+      double A = values.get(counter) - a; //by pulling all of the numbers out of the list
       double B = Math.pow(A,2);
       this.C = B + this.C;
       counter = counter + 1;
