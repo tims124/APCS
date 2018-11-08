@@ -7,7 +7,7 @@ public class Conversion{
 
     Scanner input = new Scanner(System.in);
 
-    System.out.print("Convert from?");
+    System.out.print("Convert from(in,ft,mi,mm,cm,m,km,): ");
     String ConvFr = input.nextLine();
     ConvFr = ConvFr.toLowerCase();
 
@@ -35,7 +35,7 @@ public class Conversion{
     }
 
 
-    System.out.print("Convert to?");
+    System.out.print("Convert to(in,ft,mi,mm,cm,m,km,): ");
     String ConvTo = input.nextLine();
     ConvTo = ConvTo.toLowerCase();
     String To = "";

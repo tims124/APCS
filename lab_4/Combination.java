@@ -23,36 +23,42 @@ of a single uppercase letter. */
     P2 = "";
     P3 = "";
 
-    while(check.equals("y")){
-      if (counter >= 3){
-        P1 = P2 ;
-        P2 = P3 ;
-        P3 = "" ;
-      }
-
-      if (P1.equals("")){
-        System.out.print("Set next position: ");
-        t1 = input.nextLine();
-        this.P1 = t1.toLowerCase();
-      }else{
-        if(P2.equals("")){
-          System.out.print("Set next position: ");
-          t2 = input.nextLine();
-          this.P2 = t2.toLowerCase();
-        }else{
-          if(P3.equals("")){
-              System.out.print("Set next position: ");
-              t3 = input.nextLine();
-              this.P3 = t3.toLowerCase();
-          }
+    while(counter == 0){
+      while(counter<3){
+        if (counter >= 3){
+          this.P1 = P2 ;
+          this.P2 = P3 ;
+          this.P3 = "" ;
         }
+
+        if (P1.equals("")){
+          System.out.print("Set first position: ");
+          t1 = input.nextLine();
+          this.P1 = t1.toLowerCase();
+        }else{
+          if(P2.equals("")){
+            System.out.print("Set next position: ");
+            t2 = input.nextLine();
+            this.P2 = t2.toLowerCase();
+          }else{
+            if(P3.equals("")){
+                System.out.print("Set next position: ");
+                t3 = input.nextLine();
+                this.P3 = t3.toLowerCase();
+              }
+            }
       }
 
-
-        System.out.print("Set another position(Y/N): ");
-        check = input.nextLine();
-        check = check.toLowerCase();
-        counter = counter + 1;
+      counter++;
+    }
+    System.out.print("Set different positions?(Y/N)");
+    String in = input.nextLine();
+    in = in.toLowerCase();
+      if(in.equals("y")){
+        counter = 0;
+  }else{
+    counter = 100000;
+  }
     }
     }
 

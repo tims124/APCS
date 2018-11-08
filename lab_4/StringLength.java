@@ -20,21 +20,87 @@ public class StringLength{
       String StringFour = input.nextLine();
 
 
-      int one = StringOne.length();
-      int two = StringTwo.length();
-      int three = StringThree.length();
-      int four = StringFour.length();
+      String one = StringOne.substring(0,1);
+      String two = StringTwo.substring(0,1);
+      String three = StringThree.substring(0,1);
+      String four = StringFour.substring(0,1);
 
-      int june = Math.max(one,two);
-      int july = Math.max(three,four);
-      int max = Math.max(june,july);
+      int june =-1 * one.compareTo("a");
+      int july =-1 * two.compareTo("a");
+      int aug =-1 * three.compareTo("a");
+      int sep =-1 * four.compareTo("a");
 
-      int may = Math.min(one,two);
-      int march = Math.min(three,four);
-      int min = Math.min(may,march);
+        if (june>july) {
+          if(aug>sep){
+            if(june>aug){
+              this.max = one;
+            }else{
+              this.max = three;
+            }
+          }else{
+            if(june>sep){
+              this.max = one;
+            }else{
+              this.max = four;
+            }
+          }
 
-      System.out.println("The lexicographic minimum is: "+min);
-      System.out.println("The lexicographic maximum is: "+max);
+        }else{
+          if(aug>sep){
+            if(july>aug){
+              this.max = two;
+            }else{
+              this.max = three;
+            }
+          }else{
+            if(july>sep){
+              this.max = two;
+            }else{
+              this.max = four;
+            }
+          }
+        }
+
+        if (june<july) {
+          if(aug<sep){
+            if(june<aug){
+              this.min = one;
+            }else{
+              this.min = three;
+            }
+          }else{
+            if(june<sep){
+              this.min = one;
+            }else{
+              this.min = four;
+            }
+          }
+
+        }else{
+          if(aug<sep){
+            if(july<aug){
+              this.min = two;
+            }else{
+              this.min = three;
+            }
+          }else{
+            if(july<sep){
+              this.min = two;
+            }else{
+              this.min = four;
+            }
+          }
+        }
+
+
+
+
+
+
+
+      System.out.println("The lexicographic minimum is: "+max);
+      System.out.println("The lexicographic maximum is: "+min);
     }
-
+    private String max;
+    private String min;
 }
