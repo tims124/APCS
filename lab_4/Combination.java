@@ -19,17 +19,22 @@ of a single uppercase letter. */
     Scanner input = new Scanner(System.in);
     String check = "y";
     int counter = 0;
+    int lap = 0;
     P1 = "";
     P2 = "";
     P3 = "";
 
     while(counter == 0){
+      if (lap == 1){
+        P1 =P2;
+        P2 =P3;
+        P3 ="";
+        System.out.print("Set the next position: ");
+        t3 = input.nextLine();
+        this.P3 = t3.toLowerCase();
+      }
+
       while(counter<3){
-        if (counter >= 3){
-          this.P1 = P2 ;
-          this.P2 = P3 ;
-          this.P3 = "" ;
-        }
 
         if (P1.equals("")){
           System.out.print("Set first position: ");
@@ -37,29 +42,30 @@ of a single uppercase letter. */
           this.P1 = t1.toLowerCase();
         }else{
           if(P2.equals("")){
-            System.out.print("Set next position: ");
+            System.out.print("Set second position: ");
             t2 = input.nextLine();
             this.P2 = t2.toLowerCase();
           }else{
             if(P3.equals("")){
-                System.out.print("Set next position: ");
+                System.out.print("Set third position: ");
                 t3 = input.nextLine();
                 this.P3 = t3.toLowerCase();
               }
             }
       }
-
+      lap = 1;
       counter++;
     }
-    System.out.print("Set different positions?(Y/N)");
-    String in = input.nextLine();
-    in = in.toLowerCase();
-      if(in.equals("y")){
-        counter = 0;
-  }else{
-    counter = 100000;
-  }
+    this.unlock();
+    boolean a = this.isOpen();
+    if(a){
+      System.out.println("The lock is unlocked!");
+      counter = 10000000;
+    }else{
+      lap = 1;
+      counter = 0;
     }
+  }
     }
 
 
