@@ -14,12 +14,13 @@ public class curve extends JPanel {
     int change = (int)Math.floor(x2/35);
     int counter = 0;
     while(counter < 35){
-      g.drawLine(x1+(change*counter),y2,x1+(change*counter),y2-change*counter);
+      g.drawLine(x1+(change*counter),y2,x1+(change*counter)+35,y2-(change*counter*counter));
       //  g.drawArc();
       counter++;
     }
 
     g.drawArc(x1,y1,x2,y2,270,90);
+
     g.drawLine(x2,y1+(y2/2),x2,y2);
     g.drawLine(x1+(x2/2),y2,x2,y2);
 
