@@ -6,9 +6,9 @@ public class ArrayClass{
 
   public void fillArray(int n){
     int counter = 0;
-    while(!(counter > n)){
+    while(counter < n){
     int buffer = (int)(Math.random()*50+1); //generates random number between 0(or 1) & 50 I think
-    val[counter] = buffer;
+    val[1] = buffer;
     System.out.println(val[counter]);
     counter++;
     }
@@ -62,6 +62,7 @@ public class ArrayClass{
     while(counter < arraylength){
       System.out.print("Index: "+counter);
       System.out.println(" | Value: "+val[counter]);
+      counter++;
     }
   }
 
