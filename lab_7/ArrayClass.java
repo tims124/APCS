@@ -1,16 +1,17 @@
+import java.util.Random;
 public class ArrayClass{
   public ArrayClass(int n){
-    arraylength = n;
-
+    this.arraylength = n;
   }
 
   public void fillArray(int n){
+    Random random = new Random();
     int counter = 0;
-    while(counter < n){
-    int buffer = (int)(Math.random()*50+1); //generates random number between 0(or 1) & 50 I think
-    val[1] = buffer;
-    System.out.println(val[counter]);
-    counter++;
+    while(counter < this.arraylength){
+      int rand = random.nextInt(n+1);
+      val[counter] = rand;
+      System.out.println(val[counter]);
+      counter++;
     }
   }
 
@@ -18,7 +19,6 @@ public class ArrayClass{
     int counter = 0;
     int max = val[counter];
     int buffer;
-
     while(counter < arraylength){
       counter++;
       buffer = val[counter];
@@ -97,5 +97,5 @@ public class ArrayClass{
   }
 
 private int arraylength;
-int[] val = new int[arraylength];
+private int[] val = new int[arraylength];
 }
