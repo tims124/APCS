@@ -1,14 +1,17 @@
 import java.util.Random;
 public class ArrayClass{
   public ArrayClass(int n){
-    this.arraylength = n;
+    arraylength = n;
+    val = new int[n];
+    System.out.println(n);
   }
 
   public void fillArray(int n){
     Random random = new Random();
     int counter = 0;
-    while(counter < this.arraylength){
+    while(counter < val.length){
       int rand = random.nextInt(n+1);
+      System.out.println(rand);
       val[counter] = rand;
       System.out.println(val[counter]);
       counter++;
@@ -19,7 +22,7 @@ public class ArrayClass{
     int counter = 0;
     int max = val[counter];
     int buffer;
-    while(counter < arraylength){
+    while(counter < this.arraylength){
       counter++;
       buffer = val[counter];
       max = Math.max(max,buffer);
@@ -95,7 +98,7 @@ public class ArrayClass{
       val[arraylength - counter] = buffer1;
     }
   }
-
 private int arraylength;
-private int[] val = new int[arraylength];
+private int[] val;
+
 }

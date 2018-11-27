@@ -2,7 +2,7 @@ public class ArrayTest{
   public static void main(String[] args){
     int n = 10;
     ArrayClass test = new ArrayClass(n);
-    test.fillArray(1);
+    test.fillArray(n);
     System.out.println(test.findMax());
     System.out.println(test.findMin());
     System.out.println(test.sumArray());
