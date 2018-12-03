@@ -13,7 +13,7 @@ public class ArrayClass{
       int rand = random.nextInt(n+1);
       System.out.println(rand);
       val[counter] = rand;
-      System.out.println(val[counter]);
+      //System.out.println(val[counter]);
       counter++;
     }
   }
@@ -23,9 +23,9 @@ public class ArrayClass{
     int max = val[counter];
     int buffer;
     while(counter < this.arraylength){
-      counter++;
       buffer = val[counter];
       max = Math.max(max,buffer);
+      counter++;
     }
     return max;
   }
@@ -36,9 +36,9 @@ public class ArrayClass{
     int buffer;
 
     while(counter < arraylength){
-      counter++;
       buffer = val[counter];
       min = Math.min(min,buffer);
+      counter++;
     }
     return min;
   }
@@ -91,11 +91,12 @@ public class ArrayClass{
     int counter = 0;
     int buffer1;
     int buffer2;
-    while(counter < Math.floor(arraylength)){
+    while(counter < (arraylength/2)){
       buffer1 = val[counter];
-      buffer2 = val[arraylength - counter];
+      buffer2 = val[arraylength - counter - 1];
       val[counter] = buffer2;
-      val[arraylength - counter] = buffer1;
+      val[arraylength - counter - 1] = buffer1;
+      counter++;
     }
   }
 private int arraylength;
