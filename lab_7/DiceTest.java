@@ -1,5 +1,5 @@
 import java.util.*;
-public class DiceTest{}
+public class DiceTest{
   public static void main(String[] args){
     int counter = 0;
     Scanner input = new Scanner(System.in);
@@ -7,7 +7,7 @@ public class DiceTest{}
     int n = input.nextInt();
     DiceRoll test = new DiceRoll(n);
     test.roll();
-    while(counter < 12){
+    while(counter < n){
       test.getNumber(counter);
       counter++;
     }

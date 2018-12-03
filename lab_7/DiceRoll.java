@@ -10,20 +10,23 @@ public class DiceRoll{
     int counter = 0;
     while(counter < rolls){
       int val1 = random.nextInt(6)+1;
+      System.out.println(val1);
       int val2 = random.nextInt(6)+1;
+      System.out.println(val2);
       val[val1+val2-1]++;
       System.out.println(val[val1+val2-1]);
       counter++;
     }
   }
   public int getNumber(int n){
-    return val[n-1];
+    return val[n];
   }
   public void displayResults(){
     int counter=0;
     while(counter< val.length){
       int buffer = counter + 1;
-      System.out.println(buffer+"'s: "+val[buffer]);
+      System.out.println(buffer+"'s: "+val[counter]);
+      counter++;
     }
    }
 
@@ -61,9 +64,9 @@ public class DiceRoll{
   }
   private int max(){
     int counter = 0;
-    int buffer;
+    int buffer = 0;
     int max = val[counter];
-    while(counter < 12){
+    while(counter < val.length){
       buffer = val[counter];
       max = Math.max(max,buffer);
       counter++;
