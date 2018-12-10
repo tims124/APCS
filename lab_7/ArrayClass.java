@@ -3,7 +3,7 @@ public class ArrayClass{
   public ArrayClass(int n){
     arraylength = n;
     val = new int[n];
-    System.out.println(n);
+  //  System.out.println(n);
   }
 
   public void fillArray(int n){
