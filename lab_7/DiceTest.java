@@ -7,7 +7,7 @@ public class DiceTest{
     int n = input.nextInt();
     DiceRoll test = new DiceRoll(n);
     test.roll();
-    while(counter < n){
+    while(counter < 12){
       test.getNumber(counter);
       counter++;
     }

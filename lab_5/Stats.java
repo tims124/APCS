@@ -25,7 +25,7 @@ public class Stats{
 
   public double getStandardDeviation(){ //gets standard deviation
     int counter = 0;
-    a = this.getAverage();    //could cut this maybe
+    double a = this.getAverage();    //could cut this maybe
 
     while(counter < count){            //does summation of (x-avg)^2 of the standard deviaiton
       double A = values.get(counter) - a; //by pulling all of the numbers out of the list

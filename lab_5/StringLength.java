@@ -39,7 +39,6 @@ public class StringLength{
       NewString = NewString.toLowerCase();
       StringBuffer = NewString;
       CharBuffer = StringBuffer.substring(0,1);
-      System.out.println(CharBuffer);
 
       if(NewString.equals("end")){
         end = false;
@@ -47,7 +46,6 @@ public class StringLength{
 
       if(end){
         IntBuffer = CharBuffer.compareTo("a");
-        System.out.println(IntBuffer);
 
         if(IntBuffer >= StringLMin){
           StringLMin = IntBuffer;

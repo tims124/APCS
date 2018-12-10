@@ -6,7 +6,7 @@ public class CLW  {
     int counter = 1;
     int num = 0;
 
-    while(/*true*/counter < 101){
+    while(/*true*/counter < 111){
       num = 0;
       if(counter % 3 == 0){
         System.out.print("Coza");

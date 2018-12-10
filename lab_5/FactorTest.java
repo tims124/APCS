@@ -6,10 +6,10 @@ public class FactorTest{
     System.out.println("This program will find the prime factors of any integer.");
     System.out.print("What is your integer? ");
     int a = input.nextInt();
-    Factor test = new Factor(a);
+    FactorGenerator test = new FactorGenerator(a);
 
     test.findFactor();
-    test.printFactor();
+  //test.printFactor();
 
 
   }
