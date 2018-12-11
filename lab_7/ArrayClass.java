@@ -11,7 +11,7 @@ public class ArrayClass{
     int counter = 0;
     while(counter < val.length){
       int rand = random.nextInt(n+1);
-      System.out.println(rand);
+    //  System.out.println(rand);
       val[counter] = rand;
       //System.out.println(val[counter]);
       counter++;

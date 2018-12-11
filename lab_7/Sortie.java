@@ -6,30 +6,39 @@ public class Sortie{
 
   public void sortArray(){
     int buffer;
+    //Makes Array thingy
     ArrayClass a = new ArrayClass(al);
+    a.fillArray(10);
     for(int counter = 0; counter < al; counter++){
       array[counter] = a.valueAt(counter);
     }
-    for(int x = 0; x < 10; x++){
-      for(int y = 0; y < 9-x;y++){
-        if(array[y]>array[y+1]){
-          buffer = array[x];
-          array[x] = array[y];
-          array[y] = buffer;
+    System.out.println("Initial Array: ");
+    for(int counter = 0; counter < al; counter++){
+      System.out.print("Index: "+counter);
+      System.out.println(" | Value: "+array[counter]);
+    }
+
+    //Tries to sort array thingy
+    boolean check = true;
+    while(check){
+      check = false;
+      for(int counter = 0; counter < al-1; counter++){
+        if(array[counter] > array[counter+1]){
+          buffer = array[counter];
+          array[counter] = array[counter+1];
+          array[counter+1] = buffer;
+          check = true;
         }
       }
     }
-
-  }
-
-  public void displayArray(){
-    int counter = 0;
-    while(counter < array.length){
+    System.out.println("");
+    System.out.println("Sorted Array: ");
+    for(int counter = 0; counter < al; counter++){
       System.out.print("Index: "+counter);
       System.out.println(" | Value: "+array[counter]);
-      counter++;
-    }
   }
+  }
+
 
   private int al;
   private int[] array;

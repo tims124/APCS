@@ -1,15 +1,10 @@
+import java.util.*;
 public class SortieTest{
   public static void main(String[] args){
-  int l = 10;
-  ArrayClass test1 = new ArrayClass(l);
-  Sortie test = new Sortie(l);
-  test1.fillArray(l);
-  System.out.println("Array class: ");
-  test1.displayArray();
-  System.out.println("Sort Array initial: ");
-  test.displayArray();
-  test.sortArray();
-  System.out.println("sort array final: ");
-  test.displayArray();
+    Scanner input = new Scanner(System.in);
+    System.out.print("How long do you want the array to be: ");
+    int l = input.nextInt();
+    Sortie test = new Sortie(l);
+    test.sortArray();
   }
 }
