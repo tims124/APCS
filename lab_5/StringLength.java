@@ -35,7 +35,6 @@ public class StringLength{
       while(end){
       System.out.print("Enter a word: ");
       NewString = input.nextLine();
-
       NewString = NewString.toLowerCase();
       StringBuffer = NewString;
       CharBuffer = StringBuffer.substring(0,1);
