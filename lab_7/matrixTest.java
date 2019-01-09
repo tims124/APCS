@@ -7,10 +7,10 @@ public class matrixTest{
   test.fillMatrix();
   System.out.println("Enter dimensions and values for matrix two...");
   test1.fillMatrix();
-
+  test.multiplyMatrix(test1);
   test.addMatrix(test1);
   test.subtractMatrix(test1);
-//  test.transposeMatrix();
+  test.transposeMatrix();
 
   }
 }

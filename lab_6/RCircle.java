@@ -12,10 +12,10 @@ public class RCircle extends JPanel{
   int centery;
   int centerr;
   int color;
-    while(counter < 10){
+    for(int circle = 0; circle < 10; circle++){
       centerx =(int)Math.floor(Math.random() * 600);
       centery =(int)Math.floor(Math.random() * 600);
-      centerr =(int)Math.floor(Math.random() * 50);
+      centerr =(int)Math.floor((Math.random() * 50)+50);
 
       color = (int)Math.floor(Math.random() * 8);
       if(color == 0){
@@ -45,7 +45,6 @@ public class RCircle extends JPanel{
 
 
       g.fillOval(centerx,centery,centerr,centerr);
-      counter++;
     }
   }
 
