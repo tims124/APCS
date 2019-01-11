@@ -6,7 +6,7 @@ public class Purse
 {
 	//Constructor - constructs an empty purse
 	public Purse(){
-		coins = new ArrayList<Object>();
+		coins = new ArrayList<Coin>();
 	}
 
 	//Add a coin to the purse
@@ -25,32 +25,31 @@ public class Purse
 	public double getTotal(){
 		double total = 0;
 		for(int i = 0; i <coins.size(); i++){
-			Coin a = coins.get(i);
-			System.out.println(coins.get(i).getValue());
+			total = total + coins.get(i).getValue();
 		}
 		return total;
 	}
-/*
+
 	//Returns the number of coins in the purse
 		public int count(){
 			return coins.size();
 		}
-
 	//Tests whether the purse has a coin that matches the given coin – returns
 	//true or false
 	public boolean find(Coin aCoin){
 		for(int counter = 0; counter <coins.size(); counter++){
-				if(coins.get(counter).equals(aCoin.getName())){
+				if(coins.get(counter).getName().equals(aCoin.getName())){
 					return true;
 				}
 		}
+		return false;
 	}
 
 	//Returns the number of coins in the purse that match a given coin
 	public int count(Coin aCoin){
-		int count;
-		for(int counter = 0; counter <coins.size(); counter++){
-				if(coins.get(counter).getName().equals(aCoin.getName())){
+		int count = 0;
+		for(int i = 0; i <coins.size(); i++){
+				if(coins.get(i).getName().equals(aCoin.getName())){
 					count++;
 				}
 		}
@@ -59,20 +58,23 @@ public class Purse
 
 	//Returns the coin in the purse with the largest value
 	public Coin getMaximum(){
-		Coin a;
-		for(int i =0; i < coins.size(); i++){
+		int val = 0;
+		for(int i =0; i < coins.size()-1; i++){
 			if(coins.get(i).getValue() > coins.get(i+1).getValue()){
-				a = coins.get(i);
+				val = i;
 			}
 		}
-		return a;
+		return coins.get(val);
 	}
-	/*
+
 	// Returns the list of coins in the purse as a string.
 
-	public String toString(){…}
+	public String toString(){
+		
+	}
 
 
+	/*
 	// Reverses the order of the coins in the purse
 
 
@@ -96,5 +98,5 @@ public class Purse
 	public boolean sameCoins(Purse p){…}
 
 	*/
-	private ArrayList<Object> coins;
+	private ArrayList<Coin> coins;
 }

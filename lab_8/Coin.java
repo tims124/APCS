@@ -11,14 +11,14 @@
     value=aValue;
     name=aName;
   }
-  /**		Gets the coin value	*/	
+  /**		Gets the coin value	*/
   public double getValue()	{
-    return value;	
+    return value;
   }
-  /**		Gets the coin name	*/	
+  /**		Gets the coin name	*/
   public String getName()	{
     return name;
-  }		
+  }
 private double value;
 private String name;
 }
