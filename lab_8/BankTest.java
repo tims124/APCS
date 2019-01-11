@@ -15,9 +15,11 @@ public class BankTest{
 		System.out.println("First Bank Accounts");
 		firstBank.displayAccounts();
 		System.out.println("First Bank Accounts updated");
-		firstBank.deposit(0,500);
-		firstBank.withdraw(1,100);
 		
+		firstBank.deposit(0,100);
+		firstBank.deposit(3,200);
+		firstBank.withdraw(1,100);
+		firstBank.withdraw(2,200);
 		firstBank.displayAccounts();
 
 	}

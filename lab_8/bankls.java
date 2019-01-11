@@ -11,9 +11,9 @@ public class bankls{
   }
 
   public void displayAccounts(){
+    System.out.println("# | Balance($)");
     for(int accNum = 0; accNum< test.size(); accNum++){
-      System.out.print(accNum+" |  $" +test.get(accNum).printBalance());
-      System.out.println("");
+      System.out.println(accNum+" |  " +test.get(accNum).printBalance());
     }
   }
 
