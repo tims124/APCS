@@ -91,12 +91,13 @@ public class Purse{
 	}
 
 	//Transfers the contents of one purse to another
-	//Purse P -> this purse
+	//Purse P <- this purse
 	public void transfer(Purse p){
-		int size = p.count();
+		int size = this.count();
+		System.out.println(size);
 		for(int i = 0; i < size; i++){
-			coins.add(p.coinAt(0));
-			p.coins.remove(0);
+			p.coins.add(this.coinAt(0));
+			this.coins.remove(0);
 		}
 	}
 
