@@ -36,7 +36,7 @@ public class Purse{
 	//Tests whether the purse has a coin that matches the given coin – returns
 	//true or false
 	public boolean find(Coin aCoin){
-		for(int counter = 0; counter <coins.size(); counter++){
+		for(int counter = 0; counter < coins.size(); counter++){
 				if(coins.get(counter).getName().equals(aCoin.getName())){ //freaking magic
 					return true;
 				}
