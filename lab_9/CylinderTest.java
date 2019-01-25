@@ -18,7 +18,9 @@ public class CylinderTest{
     System.out.println("Cylinder:"
     + " radius=" + c3.getRadius()
     + " height=" + c3.getHeight()
-    + " base area=" + c3.getArea()
-    + " volume=" + c3.getVolume());
+    + " surface area=" + c3.getArea()
+    + " volume=" + c3.getVolume()
+    + "toString="+ c3.toString());
+
   }
 }
