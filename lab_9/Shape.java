@@ -25,7 +25,13 @@ public class Shape{
   }
 
   public String toString(){
-    return "Shape: Filled="+this.isFilled()+" Color="+this.getColor();
+    String filled;
+    if(fill = true){
+      filled = "filled";
+    }else{
+      filled = "not filled"
+    }
+    return "A Shape with color of "+color+" and "+filled;
   }
 
   private String color;

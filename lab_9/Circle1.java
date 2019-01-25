@@ -20,5 +20,9 @@ public class Circle1 extends Shape{
     return (radius * radius * MATH.PI);
   }
 
+  public String toString(){
+    return "A Circle with radius="+radius+", which is a subclass of "+super.toString();
+  }
+
   private double radius;
 }
