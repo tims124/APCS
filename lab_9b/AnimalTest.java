@@ -1,0 +1,82 @@
+//This class tests the classes that inherit Animal.java
+public class AnimalTest
+{
+    public static void main(String args[])
+    {
+		Dog dog1=new Dog();
+		System.out.println("Dog1 "+((dog1 instanceof Animal)?"is":"is not")+" an instance of Animal");
+		System.out.println("Dog1 "+((dog1 instanceof Canine)?"is":"is not")+" an instance of Canine");
+		System.out.println("Dog1 says "+dog1.makeNoise());
+		dog1.sit();
+		dog1.stand();
+		System.out.println("Dog1 has hunger level "+dog1.getHunger());
+		dog1.roam();
+		System.out.println("Dog1 has hunger level "+dog1.getHunger());
+		dog1.eat();
+		System.out.println("Dog1 has hunger level "+dog1.getHunger());
+		System.out.println("Dog1 is "+(dog1.isAwake?"awake":"sleeping"));
+		dog1.sleep();
+		System.out.println("Dog1 is "+(dog1.isAwake?"awake":"sleeping"));
+		System.out.println();
+		SeeingEyeDog dog2=new SeeingEyeDog(5);
+		System.out.println("Dog2 "+((dog2 instanceof Animal)?"is":"is not")+" an instance of Animal");
+		System.out.println("Dog2 "+((dog2 instanceof Canine)?"is":"is not")+" an instance of Canine");
+		System.out.println("Dog2 "+((dog2 instanceof Dog)?"is":"is not")+" an instance of Dog");
+		System.out.println("Dog2 says "+dog2.makeNoise());
+		dog2.sit();
+		dog2.stand();
+		System.out.println("Dog2 has hunger level "+dog2.getHunger());
+		dog2.roam();
+		System.out.println("Dog2 has hunger level "+dog2.getHunger());
+		dog2.eat();
+		System.out.println("Dog2 has hunger level "+dog2.getHunger());
+		System.out.println("Dog2 is "+(dog2.isAwake?"awake":"sleeping"));
+		dog2.sleep();
+		System.out.println("Dog2 is "+(dog2.isAwake?"awake":"sleeping"));
+		System.out.println("Dog2 is a seeing eye dog with tracking code "+dog2.getTrackingCode());
+		System.out.println();
+		Wolf wolf1=new Wolf();
+		System.out.println("wolf1 "+((dog1 instanceof Animal)?"is":"is not")+" an instance of Animal");
+		System.out.println("wolf1 "+((dog1 instanceof Canine)?"is":"is not")+" an instance of Canine");
+		System.out.println("wolf1 says "+wolf1.makeNoise());
+		System.out.println("wolf1 has hunger level "+wolf1.getHunger());
+		wolf1.roam();
+		System.out.println("wolf1 has hunger level "+wolf1.getHunger());
+		wolf1.eat();
+		System.out.println("wolf1 has hunger level "+wolf1.getHunger());
+		System.out.println("wolf1 is "+(wolf1.isAwake?"awake":"sleeping"));
+		wolf1.sleep();
+		System.out.println("wolf1 is "+(wolf1.isAwake?"awake":"sleeping"));
+		System.out.println();
+		Lion lion1=new Lion();
+		System.out.println("lion1 "+((lion1 instanceof Animal)?"is":"is not")+" an instance of Animal");
+		System.out.println("lion1 "+((lion1 instanceof Feline)?"is":"is not")+" an instance of Feline");
+		lion1.sit();
+		lion1.stand();
+		System.out.println("The lion has "+lion1.getLivesLeft()+" lives left.");
+		System.out.println("lion1 says "+lion1.makeNoise());
+		System.out.println("lion1 has hunger level "+lion1.getHunger());
+		lion1.roam();
+		System.out.println("lion1 has hunger level "+lion1.getHunger());
+		lion1.eat();
+		System.out.println("lion1 has hunger level "+lion1.getHunger());
+		System.out.println("lion1 is "+(lion1.isAwake?"awake":"sleeping"));
+		lion1.sleep();
+		System.out.println("lion1 is "+(lion1.isAwake?"awake":"sleeping"));
+		System.out.println();
+		Cat cat1=new Cat();
+		System.out.println("cat1 "+((cat1 instanceof Animal)?"is":"is not")+" an instance of Animal");
+		System.out.println("cat1 "+((cat1 instanceof Feline)?"is":"is not")+" an instance of Feline");
+		System.out.println("The cat has "+cat1.getLivesLeft()+" lives left.");
+		System.out.println("cat1 says "+cat1.makeNoise());
+		System.out.println("cat1 has hunger level "+cat1.getHunger());
+		cat1.roam();
+		System.out.println("cat1 has hunger level "+cat1.getHunger());
+		cat1.eat();
+		System.out.println("cat1 has hunger level "+cat1.getHunger());
+		System.out.println("cat1 is "+(cat1.isAwake?"awake":"sleeping"));
+		cat1.sleep();
+		System.out.println("cat1 is "+(cat1.isAwake?"awake":"sleeping"));
+		System.out.println();
+    }
+}
