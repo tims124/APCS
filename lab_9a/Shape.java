@@ -29,7 +29,7 @@ public class Shape{
     if(fill = true){
       filled = "filled";
     }else{
-      filled = "not filled"
+      filled = "not filled";
     }
     return "A Shape with color of "+color+" and "+filled;
   }

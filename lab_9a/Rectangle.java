@@ -7,7 +7,7 @@ public class Rectangle extends Shape{
   public Rectangle(double w, double l){
     super();
     width=w;
-    length = l
+    length = l;
   }
   public Rectangle(double w, double l, String c, boolean f){
     super(c,f);
@@ -40,7 +40,7 @@ public class Rectangle extends Shape{
   }
 
   public String toString(){
-    return "A Rectangle with width="+width+" and length="+length", which is a subclass of " super.toString();
+    return "A Rectangle with width="+width+" and length="+length+", which is a subclass of "+super.toString();
   }
 
   private double width;

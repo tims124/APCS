@@ -17,7 +17,7 @@ public class Circle1 extends Shape{
   }
 
   public double getArea(){
-    return (radius * radius * MATH.PI);
+    return (radius * radius * Math.PI);
   }
 
   public String toString(){
