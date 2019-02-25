@@ -82,7 +82,7 @@ public class PictureTester
   }
 
   public static void testNormal(){
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("snowman.jpg");
     beach.explore();
   }
 
@@ -90,6 +90,18 @@ public class PictureTester
     Picture beach = new Picture("beach.jpg");
     beach.mirrorHorizontal();
     beach.explore();
+  }
+
+  public static void testMirrorHorizontalBotToTop(){
+    Picture beach = new Picture("beach.jpg");
+    beach.mirrorHorizontalBotToTop();
+    beach.explore();
+  }
+
+  public static void testMirrorArms(){
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.mirrorArms();
+    snowman.explore();
   }
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -99,6 +111,7 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     testNormal();
+    testMirrorArms();
     //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
@@ -108,11 +121,12 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVerticalRightToLeft();
     //testMirrorVertical();
-    testMirrorHorizontal();
+    //testMirrorHorizontal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
+    //testMirrorHorizontalBotToTop();
     //testCollage();
     //testCopy();
     //testEdgeDetection();

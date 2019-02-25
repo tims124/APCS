@@ -212,6 +212,22 @@ public class Picture extends SimplePicture
     }
   }
 
+  public void mirrorHorizontalBotToTop(){
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    int width = pixels[0].length;
+    for (int col = 0; col < width; col++)
+    {
+      for (int row = 0; row < pixels.length / 2 ; row++)
+      {
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[pixels.length - 1 - row][col];
+        topPixel.setColor(bottomPixel.getColor());
+      }
+    }
+  }
+
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
@@ -227,11 +243,32 @@ public class Picture extends SimplePicture
       // loop from 13 to just before the mirror point
       for (int col = 13; col < mirrorPoint; col++)
       {
-
+        count++;
         leftPixel = pixels[row][col];
         rightPixel = pixels[row]
-                         [mirrorPoint - col + mirrorPoint];
+        [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
+      }
+    }
+    System.out.println(count);
+  }
+
+  public void mirrorArms(){
+    int mirrorPoint = 191;
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+
+    // loop through the rows
+    for (int row = 158; row < mirrorPoint; row++)
+    {
+      // loop from 13 to just before the mirror point
+      for (int col = 105; col < 170; col++)
+      {
+        count++;
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+        topPixel.setColor(leftPixel.getColor());
       }
     }
   }
@@ -310,6 +347,7 @@ public class Picture extends SimplePicture
       }
     }
   }
+
 
 
   /* Main method for testing - each class in Java can have a main
