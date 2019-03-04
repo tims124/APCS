@@ -131,6 +131,22 @@ public class Picture extends SimplePicture
     }
   }
 
+  public void grayscale(Picture pic, int startRow, int endRow, int startCol, int endCol){
+    Pixel[][] pix = pic.getPixels2D();
+    for (int startR = startRow, endR = endRow; startR < endR, startR < pix.length)
+    {
+      for (int startC = startCol, endC = endCol; startC < endC, startC < pix[0].length)
+      {
+        int avg = (pix.getRed() + pix.getGreen() + pix.getBlue())/3;
+
+
+		pix.setRed(avg);
+		pix.setGreen(avg);
+		pix.setBlue(avg);
+      }
+    }
+  }
+
   public void keepOnlyBlue(){
 	Pixel[][] pixels = this.getPixels2D();
     for (Pixel[] rowArray : pixels)
@@ -298,19 +314,28 @@ public class Picture extends SimplePicture
   }
 
 
-  public void copy(Picture fromPic, int startrow, int endrow, int startcol, int endcol){
+  public void copy(Picture fromPic,
+                 int startRow, int endRow,
+                 int startCol, int endCol)
+  {
     Pixel fromPixel = null;
     Pixel toPixel = null;
     Pixel[][] toPixels = this.getPixels2D();
     Pixel[][] fromPixels = fromPic.getPixels2D();
-    for(int fromrow = 0, start = startrow, end = endrow;
-    fromrow < fromPixels.length && startrow < toPixels.length && start < end;
-    fromrow++, start++){
-      for(int fromcol = 0, begin = startcol, stop = endcol;
-      fromcol < fromPixels.length && startrow < toPixels.length && begin < stop;
-      fromrow++, startcol++){
-        fromPixel = fromPixels[fromrow][fromcol];
-        toPixel = toPixels[start][begin];
+    for (int fromRow = 0, toRow = startRow;
+         fromRow < fromPixels.length &&
+         toRow < toPixels.length &&
+         toRow < endRow;
+         fromRow++, toRow++)
+    {
+      for (int fromCol = 0, toCol = startCol;
+           fromCol < fromPixels[0].length &&
+           toCol < toPixels[0].length &&
+           toCol < endCol;
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
         toPixel.setColor(fromPixel.getColor());
       }
     }
@@ -345,6 +370,17 @@ public class Picture extends SimplePicture
         toPixel.setColor(fromPixel.getColor());
       }
     }
+  }
+
+  public void myCollage(){
+    Picture moon = new Picture("moon-surface.jpg");
+    Picture seagull = new Picture("seagull.jpg");
+    Picture snowman = new Picture("snowman.jpg");
+    moon.copy(snowman,119,159,167,233);
+    moon.copy(seagull,245,323,234,341);
+    moon.mirrorHorizontal();
+    moon.explore();
+    moon.grayscale(50,100,50,100);
   }
 
   /** Method to create a collage of several pictures */

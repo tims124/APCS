@@ -82,7 +82,7 @@ public class PictureTester
   }
 
   public static void testNormal(){
-    Picture beach = new Picture("snowman.jpg");
+    Picture beach = new Picture("seagull.jpg");
     beach.explore();
   }
 
@@ -112,8 +112,8 @@ public class PictureTester
 
   public static void testCopy(){
     Picture gull = new Picture("seagull.jpg");
-    Picture snowman = new Picture("snowman.jpg");
-    gull.copy(snowman,100,300,100,300);
+    Picture moon = new Picture("moon-surface.jpg");
+    gull.copy(moon,245,323,234,341);
     gull.explore();
   }
 
@@ -130,7 +130,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    //testNormal();
+    testNormal();
     //testMirrorArms();
     //testZeroBlue();
     //testKeepOnlyBlue();
@@ -148,7 +148,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testMirrorHorizontalBotToTop();
     //testCollage();
-    testOtherCopy();
+    //testOtherCopy();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
