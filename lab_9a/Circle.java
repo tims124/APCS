@@ -1,28 +1,38 @@
-public class Circle
-{
-private double radius;
-private String color;
-// 1st constructor, which sets both radius and color to default
-public Circle(){
-radius = 1.0;
-color = "red";
-}
-// 2nd constructor with given radius, but color default
-public Circle(double r){
-radius = r;
-color = "red";
-}
-// A public method for retrieving the radius
-public double getRadius(){
-return radius;
-}
-// A public method for computing the area of circle
-public double getArea(){
-return radius*radius*Math.PI;
-}
-public String toString(){
-return "Circle: radius=" + radius + " color=" + color;
-}
-// save as "Circle.java"
-// private instance variable, not accessible from outside this class
+public class Circle extends Shape{
+  public Circle(){
+    super();
+    radius = 1.0;
+  }
+
+  public Circle(double r){
+    super();
+    radius = r;
+  }
+
+  public Circle(double r, String c, boolean f){
+    super(c,f);
+    radius  = r;
+  }
+
+  public double getRadius(){
+    return radius;
+  }
+
+  public void setRadius(double newradius){
+    this.radius = newradius;
+  }
+
+  public double getArea(){
+    return (radius * radius * Math.PI);
+  }
+
+  public String toString(){
+    return "A Circle with radius="+radius+", which is a subclass of "+super.toString();
+  }
+
+  public double getPerimeter(){
+    return(2*radius*Math.PI);
+  }
+
+  private double radius;
 }

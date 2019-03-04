@@ -1,6 +1,6 @@
 public class Shape{
   public Shape(){
-    color ="green";
+    color ="red";
     fill = true;
   }
   public Shape(String a,boolean b){

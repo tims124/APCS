@@ -260,15 +260,58 @@ public class Picture extends SimplePicture
     Pixel[][] pixels = this.getPixels2D();
 
     // loop through the rows
-    for (int row = 158; row < mirrorPoint; row++)
+    for (int col = 105; col < 170; col++)
     {
-      // loop from 13 to just before the mirror point
-      for (int col = 105; col < 170; col++)
+      // loop from 13 to just before the mi rror point
+      for (int row = 158; row < mirrorPoint; row++)
       {
-        count++;
         topPixel = pixels[row][col];
         bottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];
-        topPixel.setColor(leftPixel.getColor());
+        bottomPixel.setColor(topPixel.getColor());
+      }
+    }
+    for (int col = 239; col < 298; col++)
+    {
+      // loop from 13 to just before the mi rror point
+      for (int row = 158; row < mirrorPoint; row++)
+      {
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+        bottomPixel.setColor(topPixel.getColor());
+      }
+    }
+  }
+
+  public void mirrorGull(){
+    int mirrorPoint = 383;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+
+    for (int col = 236; col < 344; col++){
+      for(int row = 235; row < 320; row++){
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+      }
+    }
+  }
+
+
+  public void copy(Picture fromPic, int startrow, int endrow, int startcol, int endcol){
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for(int fromrow = 0, start = startrow, end = endrow;
+    fromrow < fromPixels.length && startrow < toPixels.length && start < end;
+    fromrow++, start++){
+      for(int fromcol = 0, begin = startcol, stop = endcol;
+      fromcol < fromPixels.length && startrow < toPixels.length && begin < stop;
+      fromrow++, startcol++){
+        fromPixel = fromPixels[fromrow][fromcol];
+        toPixel = toPixels[start][begin];
+        toPixel.setColor(fromPixel.getColor());
       }
     }
   }

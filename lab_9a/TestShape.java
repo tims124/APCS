@@ -1,0 +1,81 @@
+public class TestShape
+{
+   	public static void main(String[] args)
+	{
+
+      	Shape s1 = new Shape();
+      	System.out.println("The color is: " + s1.getColor());
+      	s1.setColor("green");
+      	System.out.println("The color is: " + s1.getColor());
+      	System.out.println("The shape is filled: " + s1.isFilled());
+      	s1.setFilled(false);
+      	System.out.println("The shape is filled: " + s1.isFilled());
+      	System.out.println(s1);
+      	System.out.println();
+   		  Shape s2 = new Shape("blue",true);
+      	System.out.println(s2);
+      	System.out.println();
+      	Circle c1=new Circle();
+      	System.out.println(c1);
+      	System.out.println("The color is: " + c1.getColor());
+      	System.out.println("The shape is filled: " + c1.isFilled());
+      	System.out.println("The area is: " + c1.getArea());
+      	System.out.println("The perimeter is: " + c1.getPerimeter());
+      	System.out.println();
+      	Circle c2=new Circle(5.0);
+      	System.out.println("The color is: " + c2.getColor());
+      	System.out.println("The shape is filled: " + c2.isFilled());
+      	System.out.println("The area is: " + c2.getArea());
+      	System.out.println("The perimeter is: " + c2.getPerimeter());
+      	System.out.println(c2);
+      	System.out.println();
+      	Circle c3=new Circle(10.0,"purple",false);
+      	System.out.println("The color is: " + c3.getColor());
+      	System.out.println("The shape is filled: " + c3.isFilled());
+      	System.out.println("The area is: " + c3.getArea());
+      	System.out.println("The perimeter is: " + c3.getPerimeter());
+      	System.out.println(c3);
+      	System.out.println();
+      	Rectangle r1=new Rectangle();
+      	System.out.println("The color is: " + r1.getColor());
+      	System.out.println("The shape is filled: " + r1.isFilled());
+      	System.out.println("The area is: " + r1.getArea());
+      	System.out.println("The perimeter is: " + r1.getPerimeter());
+      	System.out.println(r1);
+      	System.out.println();
+      	Rectangle r2=new Rectangle(1.0,6.5);
+      	System.out.println("The color is: " + r2.getColor());
+      	System.out.println("The shape is filled: " + r2.isFilled());
+      	System.out.println("The area is: " + r2.getArea());
+      	System.out.println("The perimeter is: " + r2.getPerimeter());
+      	System.out.println(r2);
+      	System.out.println();
+      	Rectangle r3=new Rectangle(4.0,7.0,"pink",false);
+      	System.out.println("The color is: " + r3.getColor());
+      	System.out.println("The shape is filled: " + r3.isFilled());
+      	System.out.println("The area is: " + r3.getArea());
+      	System.out.println("The perimeter is: " + r3.getPerimeter());
+      	System.out.println(r3);
+      	System.out.println();
+      	Square sq1=new Square();
+      	System.out.println("The color is: " + sq1.getColor());
+      	System.out.println("The shape is filled: " + sq1.isFilled());
+      	System.out.println("The area is: " + sq1.getArea());
+      	System.out.println("The perimeter is: " + sq1.getPerimeter());
+      	System.out.println(sq1);
+      	System.out.println();
+      	Square sq2=new Square(3.7);
+      	System.out.println("The color is: " + sq2.getColor());
+      	System.out.println("The shape is filled: " + sq2.isFilled());
+      	System.out.println("The area is: " + sq2.getArea());
+      	System.out.println("The perimeter is: " + sq2.getPerimeter());
+      	System.out.println(sq2);
+      	System.out.println();
+      	Square sq3=new Square(2.5,"teal",false);
+      	System.out.println("The color is: " + sq3.getColor());
+      	System.out.println("The shape is filled: " + sq3.isFilled());
+      	System.out.println("The area is: " + sq3.getArea());
+      	System.out.println("The perimeter is: " + sq3.getPerimeter());
+      	System.out.println(sq3);
+   	}
+}
