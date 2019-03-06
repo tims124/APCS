@@ -131,18 +131,20 @@ public class Picture extends SimplePicture
     }
   }
 
-  public void grayscale(Picture pic, int startRow, int endRow, int startCol, int endCol){
-    Pixel[][] pix = pic.getPixels2D();
-    for (int startR = startRow, endR = endRow; startR < endR, startR < pix.length)
+  public void grayscale(int startRow, int endRow, int startCol, int endCol){
+    Pixel[][] pix = this.getPixels2D();
+    for (int startR = startRow, endR = endRow; startR < endR && startR < pix.length; startR++)
     {
-      for (int startC = startCol, endC = endCol; startC < endC, startC < pix[0].length)
+      for (int startC = startCol, endC = endCol; startC < endC && startC < pix[0].length; startC++)
       {
-        int avg = (pix.getRed() + pix.getGreen() + pix.getBlue())/3;
+        int red = pix[startR][startC].getRed();
+        int green = pix[startR][startC].getGreen();
+        int blue = pix[startR][startC].getBlue();
+        int avg = (red + green + blue) / 3;
 
-
-		pix.setRed(avg);
-		pix.setGreen(avg);
-		pix.setBlue(avg);
+        pix[startR][startC].setRed(avg);
+        pix[startR][startC].setGreen(avg);
+        pix[startR][startC].setBlue(avg);
       }
     }
   }
@@ -376,11 +378,13 @@ public class Picture extends SimplePicture
     Picture moon = new Picture("moon-surface.jpg");
     Picture seagull = new Picture("seagull.jpg");
     Picture snowman = new Picture("snowman.jpg");
-    moon.copy(snowman,119,159,167,233);
-    moon.copy(seagull,245,323,234,341);
-    moon.mirrorHorizontal();
-    moon.explore();
-    moon.grayscale(50,100,50,100);
+    this.copy(snowman,119,159,167,233);
+    this.copy(seagull,245,323,234,341);
+    this.copy(moon,50,100,50,100);
+    this.mirrorHorizontal();
+    this.grayscale(50,300,50,300);
+    this.mirrorVertical();
+
   }
 
   /** Method to create a collage of several pictures */
@@ -404,12 +408,16 @@ public class Picture extends SimplePicture
   /** Method to show large changes in color
     * @param edgeDist the distance for finding edges
     */
-  public void edgeDetection(int edgeDist)
+  public void edgeDetection(int edgeDist, boolean test)
   {
     Pixel leftPixel = null;
     Pixel rightPixel = null;
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
     Pixel[][] pixels = this.getPixels2D();
     Color rightColor = null;
+    Color bottomColor = null;
+    Color topColor = null;
     for (int row = 0; row < pixels.length; row++)
     {
       for (int col = 0;
@@ -425,6 +433,24 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+    if(test){
+    for (int col = 0 ; col < pixels[0].length -1;
+    col++){
+      for (int row = 0; row < pixels.length - 1; row++){
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[row + 1][col];
+        bottomColor = bottomPixel.getColor();
+        topColor = topPixel.getColor();
+        if(!(topColor.equals(Color.BLACK) || topColor.equals(Color.WHITE)) && !(bottomColor.equals(Color.WHITE)||bottomColor.equals(Color.BLACK) )){
+          if (topPixel.colorDistance(bottomColor) > edgeDist)  {
+          topPixel.setColor(Color.BLACK);
+          }else{
+          topPixel.setColor(Color.WHITE);
+          }
+        }
+      }
+    }
+  }
   }
 
 

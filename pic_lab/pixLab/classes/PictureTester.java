@@ -43,12 +43,21 @@ public class PictureTester
     canvas.explore();
   }
 
+  public static void testMyCollage(){
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
+  }
+
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
+    Picture swan1 = new Picture("swan.jpg");
+    swan.edgeDetection(10,false);
     swan.explore();
+    swan1.edgeDetection(10,true);
+    swan1.explore();
   }
 
   public static void testKeepOnlyBlue(){
@@ -123,6 +132,13 @@ public class PictureTester
     gull.copy(snowman,100,100);
     gull.explore();
   }
+
+  public static void testGrayscaleTwo(){
+    Picture moon = new Picture("seagull.jpg");
+    moon.grayscale(50,100,50,100);
+    moon.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -130,7 +146,10 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testNormal();
+    //testNormal();
+    //testMyCollage();
+    testEdgeDetection();
+    //testGrayscaleTwo();
     //testMirrorArms();
     //testZeroBlue();
     //testKeepOnlyBlue();
