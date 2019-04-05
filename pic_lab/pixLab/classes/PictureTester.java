@@ -148,9 +148,9 @@ public class PictureTester
     // to run
     //testNormal();
     //testMyCollage();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testGrayscaleTwo();
-    //testMirrorArms();
+    testMirrorArms();
     //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
