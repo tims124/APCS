@@ -1,39 +1,38 @@
 public class BiSearch{
-  public BiSearch(){
-    sorted = new int[11];
+  public BiSearch(){  
   }
 
-  public int[] arrayFill(int[] a, int start, int end){
-    int j = 0;
-    for(int i = start; i < end; i++){
-      a[j] = i;
-      j++;
-    }
-    return a;
-  }
-
-  public int search(int a, int[] b, int c){//target, array, midpoint
+  public int search(int a, int[] b, int c, int d){//target, array, midpoint,previous mid
     int target = a;
     int[] domain = b;
     int mid = c;
+    int previ = d;
+    int change = 0;
+    if(previ == 0){
+      previ = domain.length;
+    }
 
     if(target > domain[domain.length-1]){
       return -1;
       }
 
     if(domain[mid] == target){//if the target is in the middle
-      return mid;
+      return mid+1;
       }
 
     if(domain[mid] > target){//target is to the left of mid
-      return search(target, domain, mid - (mid/2));
+      change = Math.abs((mid - previ) / 2);
+      int newmid = mid-change;
+      System.out.println(mid+" "+change+" midabove");
+      return search(target, domain,newmid , mid);
       }
 
     if(domain[mid] < target){//target is to the right of mid
-      return search(target, domain, mid +(mid/2));
+      change = Math.abs(previ - mid) /2;
+        System.out.println(mid+" "+change+" midbelow");
+      return search(target, domain, mid + change, mid);
       }
 
-    return -1;
+      return -1;
     }
-private int[] sorted;
 }
