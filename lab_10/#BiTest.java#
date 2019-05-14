@@ -33,18 +33,11 @@ public class BiTest{
      System.out.print("Target: ");
       target = input.nextInt();
       
-      /*target = 20;
-      System.out.println("Searching for int :"+target);
-      System.out.print("In array: ");
-      for(int i : sortedArray){
-	  System.out.print(i);
-      }
-      */
-      if(test.search(sortedArray,0,sortedArray.length - 1, target) == -1){
+      if(test.search(sortedArray,target) == -1){
 	  System.out.println("Target was not found");
       }else{
 	  System.out.print("The value "+target+" was found at index ");
-	  System.out.println(test.search(sortedArray,0,sortedArray.length - 1, target)); 
+	  System.out.println(test.search(sortedArray,target)); 
       }
 
 

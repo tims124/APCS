@@ -3,56 +3,44 @@ public class Palindrome{
   }
 
   private String punctuation(String sent){//! , . ? -
+    String pali = sent;
     String buffer = "";
-    String buffer2 = "";  
-    int mark = 0;
-    String[] punc = new String[5];
-
-    punc[0] = "!";
-    punc[1] = "?";
-    punc[2] = ".";
-    punc[3] = ",";
-    punc[4] = "-";
-    for(int i = 0; i < sent.length(); i++){
-      if(sent.substring(i,i+1).equals(" ")){
-        buffer = buffer + sent.substring(mark, i);
-        mark = i+1;
-      }
+    String ls = ",.?!-'  ";
+    for(int i = 0; i <pali.length()-1;i++){
+	for(int j = 0; j < ls.length()-1;j++){
+	    
+	    if((ls.substring(j,j+1).indexOf(pali.substring(i,i+1))==0)){
+		pali = pali.substring(0,i) + pali.substring(i+1);
+	    }
+	}
     }
-    buffer = buffer + sent.substring(mark, sent.length());
-    mark = 0;
-
-    for(int i = 0; i < buffer.length(); i++){
-      if(buffer.substring(i,i+1).equals(".")){
-        buffer2 = buffer2 + buffer.substring(mark, i);
-        mark = i+1;
-      }
-    }
-
-    buffer2 = buffer2 + buffer.substring(mark, buffer.length());
-    return buffer2;
-  }
-
-
+    //System.out.println(pali);
+    return pali;
+  }	    
+   
+    
   public boolean isPalindrome(String s){
     String test = s;
-    test= test.toLowerCase();
-    String buffer = "";
-    int mark = 0;
+    test = test.toLowerCase();
 
-    //removes some punctuation
+    //removes punctuation
     test = this.punctuation(test);
+    
+    if(test.length() == 1){return true;}
+    if(test.length() == 2){
+	String first = test.substring(0,1);
+	String last = test.substring(1,2);
+	return first.equals(last);
+    }
+    
+    String first  = test.substring(0,1);
+    String last = test.substring(test.length() - 1);
+    String mid = test.substring(1,test.length() - 2);
 
-    //checks to see if the string is a palindrome
-    String fwd = test.substring(0,1) + test.substring(test.length() - 1);
-    if(test.length() > 2){
-      return (isPalindrome(test.substring(1,test.length()-1)) && isPalindrome(fwd));
+    if(first.equals(last)){
+	return true && isPalindrome(mid);
     }
-    if( (test.length() == 2) && test.substring(0,1).equals(test.substring(1)) || test.length() == 1){
-      return true;
-    }else{
-      return false;
-    }
+    return false;
 
 
   }

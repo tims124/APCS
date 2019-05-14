@@ -1,0 +1,10 @@
+public class merge{
+    public merge(){
+    }
+
+    public sort(int[] unsorted, int pt, int r){
+	if(r == 1){
+	    return unsorted[pt];
+	}
+    }
+}

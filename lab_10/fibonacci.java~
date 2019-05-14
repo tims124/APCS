@@ -1,9 +1,9 @@
-public class recursion{
-  public recursion(){}
+public class fibonacci{
+  public fibonacci(){}
   public int calcFibonacci(int i){
 
     if(i == 0){
-      return 0;
+      return 1;
     }
 
     if(i == 1){

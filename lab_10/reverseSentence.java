@@ -1,5 +1,6 @@
+import java.util.*;
 public class reverseSentence{
-  public static String reverse(String word){
+  public String reverse(String word){
     if(word.length() == 1){
       return word;
     }else{
@@ -7,7 +8,7 @@ public class reverseSentence{
     }
   }
 
-  public static String reverseIter(String start){
+  public String reverseIter(String start){
     String buffer = "";
     String send = "";
     String word[];
@@ -31,8 +32,6 @@ public class reverseSentence{
   }
 
 
-  public static void main(String[] args){
-    System.out.println(reverse("hello world!"));
-    System.out.println(reverseIter("hello world!"));
-  }
+
 }
+

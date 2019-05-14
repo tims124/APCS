@@ -1,0 +1,10 @@
+import java.util.*;
+public class fibTest{
+    public static void main(String[] args){
+	System.out.print("enter an integer value: ");
+        Scanner input = new Scanner(System.in);
+	int i = input.nextInt();
+	fibonacci test = new fibonacci();
+	System.out.println("The "+(i)+"th term of the Fibonacci sequence is: "+ test.calcFibonacci(i));
+    }
+}
